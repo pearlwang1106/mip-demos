@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html mip>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+        <link rel="canonical" href="//www.mipengine.org/">
+        <title>Hello MIP</title>
+        <style mip-custom>
+        </style>
+    </head>
+    <body>
+        Hello MIP!
+        <mip-infinitescroll data-src="https://your/ajax/api" template="myTemplate">
+            <script type="application/json">
+            {
+                "rn": 15,
+                "prn": 3,
+                "pn": 1,
+                "pnName": "pn",
+                "bufferHeightPx": 40,
+                "loadingHtml": "loading",
+                "loadFailHtml": "failed",
+                "loadOverHtml": "over!"
+            }
+            </script>
+            <template type="mip-mustache" id="myTemplate">
+                <li>
+                    <mip-img
+                        layout="responsive"
+                        width="600"
+                        height="120"
+                        src="{{img}}">
+                    </mip-img>
+                    <p>第{{number}}张图</p>
+                </li>
+            </template>
+            <div class="mip-infinitescroll-results"></div>
+            <div class="mip-infinitescroll-loading"></div>
+        </mip-infinitescroll>
+        <script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+        <script src="http://mipcache.bdstatic.com/static/v1/mip-infinitescroll/mip-infinitescroll.js"></script>
+        <script src="http://mipcache.bdstatic.com/static/v1/mip-mustache/mip-mustache.js"></script>
+    </body>
+</html>
